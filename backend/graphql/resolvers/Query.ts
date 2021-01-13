@@ -1,4 +1,5 @@
-export const Query = {
-  hello: () => "World"
-}
+import { Resolvers } from "../../generated/graphql";
 
+export const Query: Resolvers["Query"] = {
+  hello: () => "World",
+};
