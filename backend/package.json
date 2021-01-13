@@ -3,7 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.ts"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^6.2.6",
+    "@graphql-tools/load": "^6.2.5",
+    "apollo-server": "^2.19.1",
+    "graphql": "^15.4.0"
   }
 }
