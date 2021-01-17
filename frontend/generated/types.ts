@@ -15,14 +15,7 @@ export type Scalars = {
   Float: number;
 };
 
-export type Book = {
-  __typename?: "Book";
-  title?: Maybe<Scalars["String"]>;
-  description?: Maybe<Scalars["String"]>;
-};
-
 export type Query = {
   __typename?: "Query";
   hello?: Maybe<Scalars["String"]>;
-  books?: Maybe<Array<Book>>;
 };
