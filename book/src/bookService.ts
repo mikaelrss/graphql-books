@@ -1,4 +1,12 @@
-const books = [
+export interface IBook {
+  isbn: string;
+  title: string;
+  description: string;
+  cover: string;
+  authorId: number;
+}
+
+const books: IBook[] = [
   // J.K Rowling
   {
     isbn: "9781408855898",
