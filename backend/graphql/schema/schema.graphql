@@ -1,4 +1,4 @@
 type Query {
-    hello: String
-    books: [Book]
+  hello: String
+  books: [Book!]
 }

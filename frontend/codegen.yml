@@ -1,0 +1,24 @@
+overwrite: true
+schema: "../backend/graphql.schema.json"
+documents: "src/**/*.graphql"
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+generates:
+  generated/types.ts:
+    plugins:
+      - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.tsx
+      baseTypesPath: ../generated/types.ts
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      gqlImport: "@apollo/client#gql"
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      reactApolloVersion: 3

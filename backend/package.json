@@ -4,7 +4,8 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.ts",
+    "start": "run-p start:dev gen:watch",
+    "start:dev": "nodemon index.ts",
     "gen:types": "graphql-codegen --config codegen.yml",
     "gen:watch": "yarn gen:types --watch"
   },
@@ -14,6 +15,7 @@
     "@graphql-codegen/typescript": "^1.20.0",
     "@graphql-codegen/typescript-resolvers": "^1.18.1",
     "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3"
   },

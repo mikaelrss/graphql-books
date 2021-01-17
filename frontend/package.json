@@ -12,7 +12,6 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "graphql": "^15.4.0",
-    "graphql-codegen": "^0.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -20,10 +19,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "run-p start:dev gen:watch",
+    "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gen:types": "graphql-codegen --config codegen.yml",
+    "gen:watch": "yarn gen:types --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -42,5 +44,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/near-operation-file-preset": "^1.17.13",
+    "@graphql-codegen/typescript": "^1.20.0",
+    "@graphql-codegen/typescript-operations": "^1.17.13",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -25,7 +25,7 @@ export type Book = {
 export type Query = {
   __typename?: "Query";
   hello?: Maybe<Scalars["String"]>;
-  books?: Maybe<Array<Maybe<Book>>>;
+  books?: Maybe<Array<Book>>;
 };
 
 export type WithIndex<TObject> = TObject & Record<string, any>;
@@ -180,7 +180,7 @@ export type QueryResolvers<
 > = ResolversObject<{
   hello?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
   books?: Resolver<
-    Maybe<Array<Maybe<ResolversTypes["Book"]>>>,
+    Maybe<Array<ResolversTypes["Book"]>>,
     ParentType,
     ContextType
   >;
