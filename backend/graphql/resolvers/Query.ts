@@ -3,5 +3,5 @@ import { getBooks } from "book";
 
 export const Query: Resolvers["Query"] = {
   hello: () => "World",
-  books: () => getBooks(0, 3),
+  books: () => getBooks(),
 };

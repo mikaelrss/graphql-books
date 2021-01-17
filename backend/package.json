@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.ts",
-    "gen:types": "graphql-codegen --config codegen.yml"
+    "gen:types": "graphql-codegen --config codegen.yml",
+    "gen:watch": "yarn gen:types --watch"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.0",

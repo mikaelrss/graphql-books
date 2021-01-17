@@ -1,0 +1,33 @@
+.Book-Container {
+    padding: 14px;
+    display: flex;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    max-width: 20vw;
+}
+
+.Book-Container > img {
+    width: 42px;
+    height: 75px;
+    border-radius: 5px;
+}
+
+.Details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.Details > header {
+    font-weight: bold;
+}
+
+.Details > main {
+    margin-top: 7px;
+    font-size: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
