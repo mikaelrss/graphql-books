@@ -18,4 +18,17 @@ export type Scalars = {
 export type Query = {
   __typename?: "Query";
   hello?: Maybe<Scalars["String"]>;
+  books?: Maybe<Array<Book>>;
+};
+
+export type Book = {
+  __typename?: "Book";
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  author?: Maybe<Author>;
+};
+
+export type Author = {
+  __typename?: "Author";
+  name?: Maybe<Scalars["String"]>;
 };

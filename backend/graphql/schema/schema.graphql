@@ -1,3 +1,14 @@
 type Query {
   hello: String
+  books: [Book!]
+}
+
+type Book {
+  title: String
+  description: String
+  author: Author
+}
+
+type Author {
+  name: String
 }
