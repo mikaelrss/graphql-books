@@ -9,7 +9,7 @@ generates:
       - typescript
       - typescript-resolvers
     config:
-      avoidOptionals: true
+      useIndexSignature: true
   ./graphql.schema.json:
     plugins:
       - introspection

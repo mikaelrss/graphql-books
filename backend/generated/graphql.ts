@@ -18,15 +18,18 @@ export type Scalars = {
 
 export type Book = {
   __typename?: "Book";
-  title: Maybe<Scalars["String"]>;
-  description: Maybe<Scalars["String"]>;
+  title?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
 };
 
 export type Query = {
   __typename?: "Query";
-  hello: Maybe<Scalars["String"]>;
-  books: Maybe<Array<Maybe<Book>>>;
+  hello?: Maybe<Scalars["String"]>;
+  books?: Maybe<Array<Maybe<Book>>>;
 };
+
+export type WithIndex<TObject> = TObject & Record<string, any>;
+export type ResolversObject<TObject> = WithIndex<TObject>;
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
 
@@ -143,50 +146,50 @@ export type DirectiveResolverFn<
 ) => TResult | Promise<TResult>;
 
 /** Mapping between all available schema types and the resolvers types */
-export type ResolversTypes = {
+export type ResolversTypes = ResolversObject<{
   Book: ResolverTypeWrapper<Book>;
   String: ResolverTypeWrapper<Scalars["String"]>;
   Query: ResolverTypeWrapper<{}>;
   Boolean: ResolverTypeWrapper<Scalars["Boolean"]>;
-};
+}>;
 
 /** Mapping between all available schema types and the resolvers parents */
-export type ResolversParentTypes = {
+export type ResolversParentTypes = ResolversObject<{
   Book: Book;
   String: Scalars["String"];
   Query: {};
   Boolean: Scalars["Boolean"];
-};
+}>;
 
 export type BookResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Book"] = ResolversParentTypes["Book"]
-> = {
-  title: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
-  description: Resolver<
+> = ResolversObject<{
+  title?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  description?: Resolver<
     Maybe<ResolversTypes["String"]>,
     ParentType,
     ContextType
   >;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
+}>;
 
 export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Query"] = ResolversParentTypes["Query"]
-> = {
-  hello: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
-  books: Resolver<
+> = ResolversObject<{
+  hello?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  books?: Resolver<
     Maybe<Array<Maybe<ResolversTypes["Book"]>>>,
     ParentType,
     ContextType
   >;
-};
+}>;
 
-export type Resolvers<ContextType = any> = {
-  Book: BookResolvers<ContextType>;
-  Query: QueryResolvers<ContextType>;
-};
+export type Resolvers<ContextType = any> = ResolversObject<{
+  Book?: BookResolvers<ContextType>;
+  Query?: QueryResolvers<ContextType>;
+}>;
 
 /**
  * @deprecated
