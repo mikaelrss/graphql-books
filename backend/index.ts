@@ -9,6 +9,7 @@ const schemaWithResolvers = addResolversToSchema({
   resolvers,
 });
 
+
 const server = new ApolloServer({
   schema: schemaWithResolvers,
 });

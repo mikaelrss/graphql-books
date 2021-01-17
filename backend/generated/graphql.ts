@@ -18,14 +18,14 @@ export type Scalars = {
 
 export type Book = {
   __typename?: "Book";
-  title?: Maybe<Scalars["String"]>;
-  description?: Maybe<Scalars["String"]>;
+  title: Maybe<Scalars["String"]>;
+  description: Maybe<Scalars["String"]>;
 };
 
 export type Query = {
   __typename?: "Query";
-  hello?: Maybe<Scalars["String"]>;
-  books?: Maybe<Array<Maybe<Book>>>;
+  hello: Maybe<Scalars["String"]>;
+  books: Maybe<Array<Maybe<Book>>>;
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -162,8 +162,8 @@ export type BookResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Book"] = ResolversParentTypes["Book"]
 > = {
-  title?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
-  description?: Resolver<
+  title: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  description: Resolver<
     Maybe<ResolversTypes["String"]>,
     ParentType,
     ContextType
@@ -175,8 +175,8 @@ export type QueryResolvers<
   ContextType = any,
   ParentType extends ResolversParentTypes["Query"] = ResolversParentTypes["Query"]
 > = {
-  hello?: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
-  books?: Resolver<
+  hello: Resolver<Maybe<ResolversTypes["String"]>, ParentType, ContextType>;
+  books: Resolver<
     Maybe<Array<Maybe<ResolversTypes["Book"]>>>,
     ParentType,
     ContextType
@@ -184,8 +184,8 @@ export type QueryResolvers<
 };
 
 export type Resolvers<ContextType = any> = {
-  Book?: BookResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
+  Book: BookResolvers<ContextType>;
+  Query: QueryResolvers<ContextType>;
 };
 
 /**
