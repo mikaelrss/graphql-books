@@ -3,7 +3,6 @@ import Book from "../Book/Book";
 import "./Books.css";
 
 const Books = () => {
-
   return (
     <main className="Books-Container">
       <Book />

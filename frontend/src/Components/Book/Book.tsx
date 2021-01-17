@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Book.css";
 
-// interface Props {
-//   book: any
-// }
+interface Props {
+  book?: any
+}
 
-const Book = () => {
+const Book: React.FC<Props> = () => {
   return (
     <div className="Book-Container">
       <img
