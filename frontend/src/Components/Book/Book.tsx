@@ -5,7 +5,7 @@ import "./Book.css";
 const Book = () => {
   return (
     <div className="Book-Container">
-      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405532474i/22733729._SY75_.jpg" />
+      <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405532474i/22733729._SY75_.jpg"  alt="Cover" />
       <section className="Details">
         <header>A Closed and Common Orbit</header>
         <main>

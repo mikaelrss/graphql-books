@@ -7,16 +7,17 @@
 }
 
 .Book-Container > img {
-    width: 42px;
-    height: 75px;
+    width: 48px !important;
+    height: 75px !important;
     border-radius: 5px;
+    margin-right: 20px;
 }
 
 .Details {
+    max-width: calc(100% - 68px);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 20px;
 }
 
 .Details > header {
